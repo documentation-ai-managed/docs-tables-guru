@@ -1,0 +1,149 @@
+---
+title: Getting Started with Tables Guru
+description: Learn how to set up your account, create your first documentation space, and begin organizing your projects quickly.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: Existing project documents in Markdown, PDF, or DOCX format
+
+<Callout kind="info">
+
+Tables Guru is a web-based platform. No downloads required. Access it at `https://app.tablesguru.com`.
+
+</Callout>
+
+## Sign Up and Log In
+
+Follow these steps to create your account and access the dashboard.
+
+<Steps>
+  <Step title="Visit the Sign Up Page" icon="user-plus">
+    Navigate to `https://app.tablesguru.com/signup`.
+    
+    Fill in your email, create a strong password, and complete the CAPTCHA.
+  </Step>
+  <Step title="Verify Your Email" icon="mail">
+    Check your inbox for a verification email from Tables Guru.
+    
+    Click the link to activate your account.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to `https://app.tablesguru.com/login`.
+    
+    Enter your credentials to reach the dashboard.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+
+Save your credentials securely. Use a password manager for best practices.
+
+</Callout>
+
+## Create Your First Documentation Space
+
+A documentation space organizes all docs for a single project.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    On the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Configure Space" icon="settings">
+    Enter a name like `My Project Docs`, add a description, and choose visibility (private or public).
+  </Step>
+  <Step title="Save and Enter" icon="check-circle">
+    Click **Create**. You'll land in your new space's editor.
+  </Step>
+</Steps>
+
+## Add Initial Documents
+
+Import or create content to populate your space.
+
+<Tabs>
+  <Tab title="Upload Files" icon="upload">
+    Drag and drop files or click **Upload**.
+    
+    Supported formats: Markdown (`.md`), PDF, Word (`.docx`).
+    
+    <Image
+      src="https://tablesguru.com/docs/upload-example.png"
+      alt="File upload interface in Tables Guru"
+      width="600"
+      height="400"
+    />
+  </Tab>
+  <Tab title="Markdown Editor" icon="edit-3">
+    Click **New Document** and use the built-in editor.
+    
+    Start with a table example:
+    
+````markdown
+```markdown
+| Feature | Status | Priority |
+|---------|--------|----------|
+| Login   | Live   | High     |
+| Tables  | Beta   | Medium   |
+```
+````
+  </Tab>
+  <Tab title="API Import" icon="code">
+    Use the Tables Guru API for bulk import.
+    
+    <CodeGroup tabs="JavaScript,cURL">
+````javascript
+const response = await fetch('https://api.tablesguru.com/v1/spaces/{spaceId}/docs', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+  body: JSON.stringify({ content: '# My Doc\nSample table here.' })
+});
+````
+````bash
+curl -X POST https://api.tablesguru.com/v1/spaces/{spaceId}/docs \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{"content": "# My Doc\nSample table here."}'
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Basic Interface Walkthrough
+
+Get familiar with the key areas.
+
+<Columns cols={3}>
+  <Card title="Sidebar Navigation" icon="menu" href="#sidebar">
+    Access spaces, search docs, and manage settings.
+  </Card>
+  <Card title="Editor Toolbar" icon="edit" href="#editor">
+    Format text, insert tables, and preview changes.
+  </Card>
+  <Card title="Preview Panel" icon="eye" href="#preview">
+    Live view of your documentation as readers see it.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Expandable title="Explore Advanced Features" default-open="false">
+
+Dive deeper with these resources:
+
+- [Organize Tables](/docs/tables) – Structure your data efficiently
+- [Collaboration](/docs/collaboration) – Invite team members
+- [Export Options](/docs/export) – Download your spaces
+
+</Expandable>
+
+Congratulations! You've set up Tables Guru and added your first content. Organize more projects and invite collaborators to collaborate in real-time.
+
+<Callout kind="success">
+
+Need help? Check the [Help Center](/docs/help-center) or contact support@tablesguru.com.
+
+</Callout>

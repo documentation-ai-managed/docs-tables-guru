@@ -1,0 +1,127 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Tables Guru.
+---
+
+## Recent Updates
+
+Stay informed about Tables Guru releases. You receive automatic notifications in your dashboard when new versions deploy. Review changes below to understand impacts on your tables and workflows.
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration: Multiple users edit tables simultaneously with live cursors and conflict resolution.
+- Introduced AI-powered table suggestions: Generate formulas and summaries using natural language prompts.
+
+## Improvements
+
+- Enhanced table import from CSV, Excel, and Google Sheets with 40% faster processing.
+- Upgraded search functionality to include fuzzy matching for better result accuracy.
+
+## Bug Fixes
+
+- Fixed sync issues when editing large tables `{>1000 rows}`.
+- Resolved export errors for tables with custom formatting.
+
+</Update>
+
+<Update label="2024-09-20" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched sharing permissions: Set view, edit, or comment access per user or group.
+- Integrated webhook support: Trigger actions on table changes via `https://your-webhook-url.com/webhook`.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v1/tables` to `/v2/tables`. Migrate using the upgrade guide.
+
+## Bug Fixes
+
+- Corrected formula recalculation delays during rapid edits.
+- Patched security vulnerability in public table links.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.5.0" tags={["improvement", "bugfix"]}>
+
+## Improvements
+
+- Optimized mobile responsiveness for table editing on tablets and phones.
+- Added bulk operations: Delete, duplicate, or archive multiple tables at once.
+
+## Bug Fixes
+
+- Fixed column resize glitches in Chrome.
+- Stabilized undo/redo stack for complex formula edits.
+
+</Update>
+
+## Upgrading Tables Guru
+
+Upgrade seamlessly to access the latest features. Follow these steps for a smooth transition.
+
+<Callout kind="info">
+Backup your tables before upgrading. Export data via CSV from the dashboard.
+</Callout>
+
+<Steps>
+  <Step title="Check Compatibility" icon="check-circle">
+
+Review your current version in Settings `{> Dashboard > Account}`. Ensure integrations support v2.1.0.
+
+  </Step>
+  <Step title="Run the Updater" icon="download">
+
+Use the CLI for self-hosted instances:
+
+````bash
+npm update tables-guru-cli
+tables-guru upgrade --version 2.1.0
+````
+
+  </Step>
+  <Step title="Verify Changes" icon="search">
+
+Test key tables and formulas. Monitor logs for `{API_KEY}` deprecations.
+
+  </Step>
+  <Step title="Enable New Features" icon="toggle-right">
+
+In Dashboard, toggle real-time collaboration and AI suggestions.
+
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Cloud" icon="cloud">
+    Updates deploy automatically. Refresh your browser to apply.
+  </Tab>
+  <Tab title="Self-Hosted" icon="server">
+    ```bash
+    docker pull tablesguru:latest
+    docker-compose up -d
+    ```
+  </Tab>
+</Tabs>
+
+## Upcoming Changes
+
+Preview features in development. Provide feedback via the dashboard form.
+
+<Columns cols={2}>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="#">
+    Embed charts and pivot tables directly in docs.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="#">
+    Rollback tables to previous states with diff views.
+  </Card>
+  <Card title="Plugin Ecosystem" icon="puzzle" href="#">
+    Extend with community plugins for Slack and Zapier.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+Subscribe to the changelog RSS feed at `/rss/changelog.xml` for instant notifications.
+</Callout>
